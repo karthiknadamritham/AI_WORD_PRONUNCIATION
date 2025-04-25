@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Pronunciation Assistant</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .signup-container {
+      max-width: 400px;
+      margin: 100px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .signup-container .profile-icon {
+      font-size: 3em;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .signup-form input {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .signup-form button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .switch-login {
+      margin-top: 15px;
+      font-size: 0.9em;
+    }
+
+    .switch-login a {
+      color: #007bff;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .switch-login a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <div class="profile-icon"><i class="fas fa-user-circle"></i></div>
+    <h2>Create Your Account</h2>
+    <div class="signup-form">
+      <input type="text" id="newUsername" placeholder="Username" required />
+        <input type="email" id="newEmail" placeholder="Email" required />
+      <input type="password" id="newPassword" placeholder="Password" required />
+      <button onclick="signup()">Sign Up</button>
+    </div>
+    <div class="switch-login">
+      Already have an account? <a onclick="goToLogin()">Login here</a>
+    </div>
+  </div>
+
+  <script>
+    function signup() {
+      const user = document.getElementById('newUsername').value.trim();
+      const pass = document.getElementById('newPassword').value.trim();
+
+      if (!user || !pass) {
+        alert("Both fields are required!");
+        return;
+      }
+
+      // Save fake user locally (for demo purposes)
+      localStorage.setItem('fakeUser', JSON.stringify({ user, pass }));
+
+      alert("Signup successful! Redirecting to login...");
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 1200);
+    }
+
+    function goToLogin() {
+      window.location.href = "login.html";
+    }
+
+    // If already logged in, skip
+    // if (localStorage.getItem('loggedIn') === 'true') {
+    //   window.location.href = 'index.html';
+    // }
+  </script>
+</body>
+</html>
