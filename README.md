@@ -71,9 +71,6 @@ Feel free to fork, suggest improvements, or report issues!
 
 🔗 **GitHub Repo:** https://github.com/karthiknadamritham/AI_WORD_PRONUNCIATION
 
---- 
-
-**🌟 Enjoy learning pronunciations effortlessly!** 🎤🌍  
 
 ---
 
